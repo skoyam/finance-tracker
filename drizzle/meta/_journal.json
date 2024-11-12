@@ -1,0 +1,20 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1731369018457,
+      "tag": "0000_lean_zaran",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1731369563100,
+      "tag": "0001_demonic_albert_cleary",
+      "breakpoints": true
+    }
+  ]
+}
