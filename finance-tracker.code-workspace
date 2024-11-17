@@ -1,0 +1,21 @@
+{
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "\\\\ncsudrive.ncsu.edu\\home\\csc230\\skoyamb\\p6"
+    }
+  ],
+  "settings": {
+    "files.associations": {
+      "map.h": "c",
+      "stdbool.h": "c",
+      "numbers.h": "c",
+      "limits.h": "c",
+      "string.h": "c",
+      "group.h": "c",
+      "magic.h": "c"
+    }
+  }
+}
