@@ -1,6 +1,8 @@
 import { db } from "@/db/drizzle";
-import { accounts } from "@/db/schema";
+import { accounts, insertAccountSchema } from "@/db/schema";
 import { clerkMiddleware, getAuth } from "@hono/clerk-auth";
+import { zValidator } from "@hono/zod-validator";
+import { createId } from "@paralleldrive/cuid2";
 import { eq } from "drizzle-orm";
 import { Hono } from "hono";
 import { HTTPException } from "hono/http-exception";
@@ -25,6 +27,30 @@ const app = new Hono()
         })
         .from(accounts)
         .where(eq(accounts.userId, auth.userId));
+
+      return c.json({ data });
+  })
+  .post("/",
+    clerkMiddleware(),
+    // validating json, then the schema for just the name
+    zValidator("json", insertAccountSchema.pick({
+      name: true,
+    })),
+    async (c) => {
+      // assigning the user id and its vals
+      const auth = getAuth(c);
+      const values = c.req.valid("json");
+
+      if (!auth?.userId) {
+        return c.json({ error: "Unauthorized" }, 401);
+      }
+
+      // destructure data so you can just ret in in c.json
+      const [data] = await db.insert(accounts).values({
+        id: createId(),
+        userId: auth.userId,
+        ...values,
+      }).returning();
 
       return c.json({ data });
   });

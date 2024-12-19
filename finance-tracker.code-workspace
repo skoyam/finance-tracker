@@ -4,7 +4,7 @@
       "path": "."
     },
     {
-      "path": "\\\\ncsudrive.ncsu.edu\\home\\csc230\\skoyamb\\p6"
+      "path": "\\\\ncsudrive.ncsu.edu\\home\\csc230\\exercises\\exercise25"
     }
   ],
   "settings": {
@@ -15,7 +15,8 @@
       "limits.h": "c",
       "string.h": "c",
       "group.h": "c",
-      "magic.h": "c"
+      "magic.h": "c",
+      "input.h": "c"
     }
   }
 }
