@@ -1,1 +1,3 @@
-## Meet FIN, the Finance-Tracker Application designed in TypeScript which functionality includes
+## FIN Finance Tracker
+
+#### Meet Fin, the finance-tracker application designed in TypeScript so you can directly manage your spending in a visually clear manner. 
